@@ -8,20 +8,20 @@ import java.util.regex.Pattern;
 public class Main {
   public static void main(String args[]) throws IOException {
 
-    Set<String> ts = new TreeSet<>();
+    Set<String> treesetStrings = new TreeSet<>();
 
-    String str = "Mickey-Mouse1928@example.com";
-    Pattern p = Pattern.compile("[A-Za-z0-9-_.]{1,}@[A-Za-z0-9-_.]*[a-z]{1,3}");
-    Matcher m = p.matcher(str);
+    String emailString = "Mickey-Mouse1928@example.com";
+    Pattern pattern = Pattern.compile("[A-Za-z0-9-_.]{1,}@[A-Za-z0-9-_.]*[a-z]{1,3}");
+    Matcher matcher = pattern.matcher(emailString);
 
-    if (m.find()) {
-      ts.add(m.group());
+    if (matcher.find()) {
+      treesetStrings.add(matcher.group());
     }
 
-    Iterator<String> it = ts.iterator();
-    while (it.hasNext()) {
-      System.out.print(it.next());
-      if (it.hasNext())
+    Iterator<String> iterator = treesetStrings.iterator();
+    while (iterator.hasNext()) {
+      System.out.print(iterator.next());
+      if (iterator.hasNext())
         System.out.print(";");
       else
         System.out.println("");
